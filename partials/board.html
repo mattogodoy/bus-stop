@@ -1,0 +1,19 @@
+<h2>Bus stop number <i>{{stopId}}</i> </h2>
+<h5><small>Last updated by source: {{info.lastUpdated}}</small></h5>
+
+<div class="alert alert-danger" role="alert" ng-show="showError">{{errMsg}}</div>
+
+<table class="table table-hover table-striped table-bordered">
+  <tr>
+    <th>Destination</th>
+    <th>Route</th>
+    <th>Scheduled time</th>
+    <th>Estimated wait</th>
+  </tr>
+  <tr ng-repeat="arrival in info.arrivals">
+    <td>{{arrival.destination}}</td>
+    <td>{{arrival.routeName}}</td>
+    <td>{{arrival.scheduledTime}}</td>
+    <td>{{arrival.estimatedWait}}</td>
+  </tr>
+</table>
